@@ -6,6 +6,8 @@
 <script type="text/javascript" src="<?php echo base_url() ?>assets/trumbowyg/trumbowyg.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/trumbowyg/langs/pt_br.js"></script>
 
+<!-- Teste de comentario -->
+
 <div class="row-fluid" style="margin-top:0">
     <div class="span12">
         <div class="widget-box">

@@ -39,7 +39,13 @@
                                 <form action="<?php echo current_url(); ?>" method="post" id="formOs">
                                     <div class="span12" style="padding: 1%">
                                         <div class="span6">
-                                            <label for="cliente">Cliente<span class="required">*</span></label>
+                                        <label for="cliente">Cliente</a><span class="required">*</span>
+                                            <div class="linknovo">   
+                                            <?php if ($this->permission->checkPermission($this->session->userdata('permissao'), 'aCliente')) : ?>
+                                                    <a href="<?= site_url('clientes') ?>" target="_blank" onclick="window.open(this.href, this.target, 'width=754,height=479'); return false;">+ Add. Cliente</a>
+                                                <?php endif ?>
+                                            </label>
+                                            </div>
                                             <input id="cliente" class="span12" type="text" name="cliente" value="" />
                                             <input id="clientes_id" class="span12" type="hidden" name="clientes_id" value="" />
                                         </div>
