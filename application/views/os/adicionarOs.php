@@ -15,6 +15,12 @@
         margin-top: 0;
         margin-bottom: 0;
     }
+    .esquerda {
+        float: left;
+    }
+    .direita {
+        float: right;
+    }
 </style>
 
 <div class="row-fluid" style="margin-top:0">
@@ -27,7 +33,7 @@
                 <div class="span12" id="divProdutosServicos" style=" margin-left: 0">
 
                     <ul class="nav nav-tabs">
-                        <li class="active" id="tabDetalhes"><a href="#tab1" data-toggle="tab">Detalhes da OS</a></li>
+                        <li class="active" id="tabDetalhes"><a href="#tab1" data-toggle="tab">Detalspanhes da OS</a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab1">
@@ -39,13 +45,11 @@
                                 <form action="<?php echo current_url(); ?>" method="post" id="formOs">
                                     <div class="span12" style="padding: 1%">
                                         <div class="span6">
-                                        <label for="cliente">Cliente</a><span class="required">*</span>
-                                            <div class="linknovo">   
+                                            <label for="cliente"  class="esquerda">Cliente</a><span class="required">*</span></label>
+                                            <!--Adiciona link para cadastrar novo cliente -->
                                             <?php if ($this->permission->checkPermission($this->session->userdata('permissao'), 'aCliente')) : ?>
-                                                    <a href="<?= site_url('clientes') ?>" target="_blank" onclick="window.open(this.href, this.target, 'width=754,height=479'); return false;">+ Add. Cliente</a>
-                                                <?php endif ?>
-                                            </label>
-                                            </div>
+                                            <label for="add_Cliente" class="direita"><a href="<?= site_url('clientes') ?>" target="_blank" onclick="window.open(this.href, this.target, 'width=754,height=479'); return false;">+ Add. Cliente</a></label>
+                                            <?php endif ?>
                                             <input id="cliente" class="span12" type="text" name="cliente" value="" />
                                             <input id="clientes_id" class="span12" type="hidden" name="clientes_id" value="" />
                                         </div>
