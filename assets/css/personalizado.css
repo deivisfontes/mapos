@@ -1,0 +1,19 @@
+.esquerda {
+    float: left;
+}
+
+.direita {
+    float: right;
+    font-size: 15px;
+    /*font-weight: bold;*/
+    font-style: italic;
+}
+
+a.linkdireita:hover {
+    background-color: #fb9b0b;
+    color:#ffffff;
+    border-radius: 3px;
+    /* Declaração para aparecer no Firefox */
+    -moz-border-radius: 3px;
+}
+

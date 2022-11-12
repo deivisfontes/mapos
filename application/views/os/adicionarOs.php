@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/js/jquery-ui/css/smoothness/jquery-ui-1.9.2.custom.css" />
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery.validate.js"></script>
+<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/personalizado.css">
 
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/trumbowyg/ui/trumbowyg.css">
 <script type="text/javascript" src="<?php echo base_url() ?>assets/trumbowyg/trumbowyg.js"></script>
@@ -15,12 +16,6 @@
         margin-top: 0;
         margin-bottom: 0;
     }
-    .esquerda {
-        float: left;
-    }
-    .direita {
-        float: right;
-    }
 </style>
 
 <div class="row-fluid" style="margin-top:0">
@@ -33,7 +28,7 @@
                 <div class="span12" id="divProdutosServicos" style=" margin-left: 0">
 
                     <ul class="nav nav-tabs">
-                        <li class="active" id="tabDetalhes"><a href="#tab1" data-toggle="tab">Detalspanhes da OS</a></li>
+                        <li class="active" id="tabDetalhes"><a href="#tab1" data-toggle="tab">Detalhes da OS</a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab1">
@@ -48,7 +43,7 @@
                                             <label for="cliente"  class="esquerda">Cliente</a><span class="required">*</span></label>
                                             <!--Adiciona link para cadastrar novo cliente -->
                                             <?php if ($this->permission->checkPermission($this->session->userdata('permissao'), 'aCliente')) : ?>
-                                            <label for="add_Cliente" class="direita"><a href="<?= site_url('clientes') ?>" target="_blank" onclick="window.open(this.href, this.target, 'width=754,height=479'); return false;">+ Add. Cliente</a></label>
+                                            <label for="add_Cliente" class="direita"><a class="linkdireita" href="<?= site_url('clientes') ?>" target="_blank" onclick="window.open(this.href, this.target, 'width=754,height=479'); return false;"> + Add. Cliente </a></label>
                                             <?php endif ?>
                                             <input id="cliente" class="span12" type="text" name="cliente" value="" />
                                             <input id="clientes_id" class="span12" type="hidden" name="clientes_id" value="" />
@@ -59,7 +54,7 @@
                                             <input id="usuarios_id" class="span12" type="hidden" name="usuarios_id" value="<?= $this->session->userdata('id'); ?>" />
                                         </div>
                                     </div>
-                                    <div class="span12" style="padding: 1%; margin-left: 0">
+                                    <div class="span12" style="padding: 1%; margin-left: 0;">
                                         <div class="span3">
                                             <label for="status">Status<span class="required">*</span></label>
                                             <select class="span12" name="status" id="status" value="">
@@ -84,7 +79,11 @@
                                             <label for="garantia">Garantia (dias)</label>
                                             <input id="garantia" type="number" placeholder="Status s/g inserir nº/0" min="0" max="9999" class="span12" name="garantia" value="" />
                                             <?php echo form_error('garantia'); ?>
-                                            <label for="termoGarantia">Termo Garantia</label>
+                                            <label for="termoGarantia" class="esquerda">Termo Garantia</label>
+                                            <!--Adiciona link para cadastrar novo termo de garantia -->
+                                            <?php if ($this->permission->checkPermission($this->session->userdata('permissao'), 'aGarantia')) : ?>
+                                            <label for="add_termo" class="direita"><a class="linkdireita"href="<?= site_url('garantias') ?>" target="_blank" onclick="window.open(this.href, this.target, 'width=754,height=479'); return false;"> + Add. Garantia </a></label>
+                                            <?php endif ?>
                                             <input id="termoGarantia" class="span12" type="text" name="termoGarantia" value="" />
                                             <input id="garantias_id" class="span12" type="hidden" name="garantias_id" value="" />
                                         </div>
