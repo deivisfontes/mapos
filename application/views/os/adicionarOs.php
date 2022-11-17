@@ -80,7 +80,7 @@
                                             <input id="garantia" type="number" placeholder="Status s/g inserir nº/0" min="0" max="9999" class="span12" name="garantia" value="" />
                                             <?php echo form_error('garantia'); ?>
                                             <label for="termoGarantia" class="esquerda">Termo Garantia</label>
-                                            <!--Adiciona link para cadastrar novo termo de garantia caso nao existir -->
+                                            <!--Adiciona link para cadastrar novo termo de garantia -->
                                             <?php if ($this->permission->checkPermission($this->session->userdata('permissao'), 'aGarantia')) : ?>
                                             <label for="add_termo" class="direita"><a class="linkdireita"href="<?= site_url('garantias') ?>" target="_blank" onclick="window.open(this.href, this.target, 'width=754,height=479'); return false;"> + Add. Garantia </a></label>
                                             <?php endif ?>
